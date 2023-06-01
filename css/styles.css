@@ -639,7 +639,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1) rotate(0);
   transition: transform 300ms linear;
   width: 408px;
   min-height: 584px;
@@ -651,7 +651,7 @@ body {
 }
 
 .backdrop.is-hidden .modal {
-  transform: translate(-50%, 50%) scaleY(0);
+  transform: translate(-50%, 50%) scaleY(0) rotate(-180deg);
 }
 
 .modal-btn-close {
