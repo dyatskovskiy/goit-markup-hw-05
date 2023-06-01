@@ -9,6 +9,7 @@
   --passive-color: #4d5ae5;
   --active-color: #404bbf;
   --success-color: #31d0aa;
+  --modal-bg: #fcfcfc;
   /* Текст */
   --text-size: 16px;
   --text-spacing: 0.02em;
@@ -616,4 +617,47 @@ body {
 
 .card-item:is(:hover, :focus) .card-cover-text {
   transform: translateY(0%);
+}
+
+/*====================МОДАЛЬНЕ ВІКНО====================*/
+.backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(46, 47, 66, 0.4);
+  top: 0;
+  transition: opacity 400ms linear;
+}
+
+.is-hidden {
+  visibility: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 300ms linear;
+  width: 408px;
+  min-height: 584px;
+  border-radius: 4px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: var(--modal-bg);
+  padding: 24px;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, 50%) scaleY(0);
+}
+
+.modal-btn-close {
+  display: block;
+  margin-left: auto;
+  border-radius: 50%;
+  border-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--accent-color);
 }
